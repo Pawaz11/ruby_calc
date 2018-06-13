@@ -32,6 +32,19 @@ def bmi_mode_imperial
 end
 
 #Trip Mode
+def trip_mode
+
+puts "What is the distance?"
+distance = gets.chomp.to_f
+puts "What is your mpg?"
+mpg = gets.chomp.to_f
+puts "What is your cost per gallon?"
+cost = gets.chomp.to_f
+puts = "What is your speed?"
+speed = gets.chomp.to_f
+
+
+end
 
 
 
