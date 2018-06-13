@@ -1,10 +1,39 @@
 def select_mode mode
-  if mode == "b"
+  if mode == "bm"
+    bmi_mode_metric
+  elsif mode == "bi"
+    bmi_mode_imperial
+  elsif mode == "b"
     basic_mode
   else
     advanced_mode
   end
 end
+
+def bmi_mode_metric
+  puts "What is your weight?"
+  weight = gets.chomp.to_f
+  puts "What is your height?"
+  height = gets.chomp.to_f
+
+  bmi = weight / (height)*(height)
+  puts bmi
+end
+
+def bmi_mode_imperial
+  puts "What is your weigth in pounds?"
+  weight = gets.chomp.to_f
+  puts "What is your height in inches?"
+  height = gets.chomp.to_f
+
+  bmi_imp = (weight / (height) * (height)) * 703
+  puts bmi_imp
+
+end
+
+#Trip Mode
+
+
 
 #Basic mode
 def basic_mode
@@ -59,11 +88,6 @@ def advanced_mode
   puts "Would you like to work out the [p]ower or [s]qaureRoot?"
   method = gets.chomp
 
-  # puts "Enter two numbers"
-  # #Prompt for num1
-  # num1 = gets.chomp.to_f
-  # #Prompt for num2
-  # num2 = gets.chomp.to_f
   def power num1, num2
     puts num1 ** num2
   end
@@ -89,10 +113,9 @@ def advanced_mode
   end
 
 end
-#Calculator
 
 #Prompt for mode: Basic or Advanced
-puts "Select mode: Basic[b] or Advanced[a]"
+puts "Select mode: Basic[b] or Advanced[a] or BMI[bm] or BMI[bi]"
 mode = gets.chomp
 
 select_mode mode
